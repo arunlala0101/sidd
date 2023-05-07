@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run PowerShell script
     env: #Set secrets as environment variables sunscription name added under repository secrets.
-      SP_TENANT_ID: "99f3fde6-b70d-46a5-b1ab-6b3cdddbbd50"
+      SP_TENANT_ID: "c6d45d93-3646-435c-91e4-70f5ec9fd82e"
       AZURE_SUBSCRIPTION_NAME:  ${{ secrets.AZURE_SUBSCRIPTION_NAME }}
       run: |
         Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
