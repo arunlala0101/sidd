@@ -1,0 +1,15 @@
+name: Deploy PowerShell script
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run PowerShell script
+      run: |
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
+          .\gitrepo\test2\createDatabase.ps1
