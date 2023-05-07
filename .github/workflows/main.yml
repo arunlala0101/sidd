@@ -27,9 +27,9 @@ jobs:
       - name: Run PowerShell script
         uses: microsoft/powershell@v1
         with:
-          enable-AzPSSession: true
+          ##enable-AzPSSession: true
           pwsh: 'pwsh'
           workingDirectory: .
           script: |
-            .\createDatabase.ps1
+            .\createDatabase.ps1 
             # Remember to replace any variables with their actual values
