@@ -47,7 +47,6 @@ jobs:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # Remove publish-profile to use Azure RBAC
-run: |
+      run: |
         Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
-          .\gitrepo\test2\createDatabase.ps1
-    
+        .\gitrepo\test2\createDatabase.ps1
