@@ -18,6 +18,8 @@ jobs:
     - name: Run PowerShell script
       uses: microsoft/powershell@v1
       with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        enable-AzPSSession: true
         pwsh: 'pwsh'
         workingDirectory: .
         script: |
