@@ -1,0 +1,18 @@
+name: Deploy PowerShell script
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run PowerShell script
+    env: #Set secrets as environment variables sunscription name added under repository secrets.
+      SP_TENANT_ID: "99f3fde6-b70d-46a5-b1ab-6b3cdddbbd50"
+      AZURE_SUBSCRIPTION_NAME:  ${{ secrets.AZURE_SUBSCRIPTION_NAME }}
+      run: |
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
+          .\createDatabase.ps1
